@@ -11,5 +11,6 @@ def get_target_df(target_date, path):
 target_date = date(year=2021, month=3, day=7)
 df_server = get_target_df(target_date, 'server.csv')
 df_client = get_target_df(target_date, 'client.csv')
+df = df_server.join(df_client, 'error_id')
 
 print(df_server.head(), df_client.head())
